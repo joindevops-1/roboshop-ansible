@@ -7,3 +7,13 @@
   ansible.builtin.import_role:
     name: common
     tasks_from: app-setup.yaml
+
+- name: Install node dependencies
+  ansible.builtin.shell: npm install
+  args:
+      chdir: /app
+
+- name: SystemD Setup
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: systemd-setup.yaml
