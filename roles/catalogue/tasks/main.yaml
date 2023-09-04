@@ -1,22 +1,22 @@
-- name: Load NodeJS
-  ansible.builtin.import_role:
-    name: common
-    tasks_from: nodejs
+# - name: Load NodeJS
+#   ansible.builtin.import_role:
+#     name: common
+#     tasks_from: nodejs
 
-- name: App Pre Setup
-  ansible.builtin.import_role:
-    name: common
-    tasks_from: app-setup.yaml
+# - name: App Pre Setup
+#   ansible.builtin.import_role:
+#     name: common
+#     tasks_from: app-setup.yaml
 
-- name: Install node dependencies
-  ansible.builtin.shell: npm install
-  args:
-      chdir: /app
+# - name: Install node dependencies
+#   ansible.builtin.shell: npm install
+#   args:
+#       chdir: /app
 
-- name: SystemD Setup
-  ansible.builtin.import_role:
-    name: common
-    tasks_from: systemd-setup.yaml
+# - name: SystemD Setup
+#   ansible.builtin.import_role:
+#     name: common
+#     tasks_from: systemd-setup.yaml
 
 - name: copy mongo repo to yum.repos.d
   ansible.builtin.copy:
