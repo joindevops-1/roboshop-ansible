@@ -1,6 +1,6 @@
 - name: check roboshop user exist or not
   ansible.builtin.command: id roboshop
-    register: out #output is variable name
+  register: out #output is variable name
   ignore_errors: true
 
 - when: out.rc != 0
