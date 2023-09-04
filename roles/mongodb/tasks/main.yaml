@@ -1,0 +1,3 @@
+- name: this task is from mongodb role
+  ansible.builtin.debug:
+    msg: "Hello from mongodb task role"
